@@ -1,3 +1,8 @@
+https://infinite-headland-74747.herokuapp.com/
+rails s
+
+
+
 Instagram Challenge
 ===================
 
