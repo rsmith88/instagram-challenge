@@ -9,10 +9,10 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'POST /' do
-  #   it 'responds with 200' do
-  #     post :create, params: { user: { name: 'Jeff', email: 'jeff@hotmail.com', password: 'password1' } }
-  #     expect(response).to redirect_to(posts_url)
-  #   end
+    it 'responds with 200' do
+      post :create, params: { user: { name: 'Jeff', email: 'jeff@hotmail.com', password: 'password1' } }
+      expect(response).to redirect_to(users_new_url)
+    end
 
     it 'creates a user' do
       post :create, params: { user: { name: 'Jeff', email: 'jeff@hotmail.com', password: 'password1' } }
