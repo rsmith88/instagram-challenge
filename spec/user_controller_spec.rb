@@ -16,7 +16,11 @@ RSpec.describe UsersController, type: :controller do
 
     it 'creates a user' do
       post :create, params: { user: { name: 'Jeff', email: 'jeff@hotmail.com', password: 'password1' } }
-      expect(User.find_by(name: 'Jeff')).to be
+      user = User.find_by(name: 'Jeff')
+      expect(User.find_by(name: 'Jeff')).to be_valid
+      expect(user.id).to eq 17
+      expect(user.name).to eq 'Jeff'
+      expect(user.email).to eq 'jeff@hotmail.com'
     end
   end
 
