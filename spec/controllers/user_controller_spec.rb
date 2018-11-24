@@ -18,6 +18,7 @@ RSpec.describe UsersController, type: :controller do
       post :create, params: { user: { name: 'Jeff', email: 'jeff@hotmail.com', password: 'password1' } }
       user = User.find_by(name: 'Jeff')
       expect(User.find_by(name: 'Jeff')).to be_valid
+    end
   end
 
   describe 'GET /' do
@@ -26,4 +27,5 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
 end

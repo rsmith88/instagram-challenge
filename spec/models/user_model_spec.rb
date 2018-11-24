@@ -1,12 +1,14 @@
 require 'rails_helper'
 
-  describe '#create' do
+RSpec.describe User, type: :model do
+  subject do
+    described_class.new(name: 'Test', email: 'test@test.com', password: 'password')
+  end
+
     it 'creates a user' do
-      User.create(name: 'Jeff', email: 'jeff@hotmail.com', password: 'password1')
-      user = User.find_by(name: 'Jeff')
-      expect(User.find_by(name: 'Jeff')).to be_valid
-      expect(user.id).to eq 17
-      expect(user.name).to eq 'Jeff'
-      expect(user.email).to eq 'jeff@hotmail.com'
+      expect(subject.name).to eq 'Test'
+      expect(subject.email).to eq 'test@test.com'
+      expect(subject.password).to eq 'password'
     end
+
   end
