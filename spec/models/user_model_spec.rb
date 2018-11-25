@@ -8,7 +8,6 @@ RSpec.describe User, type: :model do
     it 'creates a user' do
       expect(subject.name).to eq 'Test'
       expect(subject.email).to eq 'test@test.com'
-      expect(subject.password).to eq 'password'
     end
 
     it 'is not valid without a name' do

@@ -18,7 +18,7 @@ RSpec.describe UsersController, type: :controller do
     it 'creates a user' do
       post :create, params: { user: { name: 'Jeff', email: 'jeff@hotmail.com', password: 'password1' } }
       user = User.find_by(name: 'Jeff')
-      expect(User.find_by(name: 'Jeff')).to be_valid
+      expect(User.find_by(name: 'Jeff')).to be
     end
   end
 
